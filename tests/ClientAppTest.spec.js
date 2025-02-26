@@ -7,7 +7,7 @@ test('Login Success', async ({ browser, page }) => {
     // await page.waitForLoadState('networkidle');
     // await expect(page.locator('text=Incorrect username/password.').first()).toBeVisible();
     await page.locator('.card-body b').first().waitFor();
-    console.log(await page.locator('.card-body b').allTextContents());
+    // console.log(await page.locator('.card-body b').allTextContents());
     // await page.pause();
 })
 
@@ -21,7 +21,6 @@ test('New Tab Link', async ({ browser }) => {
         documentLink.click()
     ]);
     const text = await newPage.locator('.red').textContent();
-    console.log(text);
 });
 
 test('Client App Login', async ({ page }) => {
@@ -33,7 +32,7 @@ test('Client App Login', async ({ page }) => {
     await page.locator('[value="Login"]').click();
     await page.waitForLoadState('networkidle');
     const titles = await page.locator('.card-body b').allTextContents();
-    const count = products.count();
+    const count = await products.count();
     for (let i = 0; i < count; i++) {
         products.nth(i).locator('b') //
     }

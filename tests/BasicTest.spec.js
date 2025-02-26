@@ -29,5 +29,5 @@ test('Login Success', async ({ browser, page }) => {
     await loginButton.click();
     await page.waitForLoadState('networkidle');
     // await expect(page.locator('text=Incorrect username/password.').first()).toBeVisible();
-    console.log(await page.locator('.card-body a').nth(0).textContent());
+    // console.log(await page.locator('.card-body a').nth(0).textContent());
 })
